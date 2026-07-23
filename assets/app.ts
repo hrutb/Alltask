@@ -426,10 +426,41 @@ fetchGame()
  //------------recipies------ 
 
 
+
+
+interface recipes{ 
+            name:string,
+            ingredients:string[],
+            time:number,
+            difficulty:string
+}
+
+
+type recipe ={ 
+            name:string,
+            ingredients:string[],
+            time:number,
+            difficulty:string
+}
+
+
  const recipes = [
     { name: "Pasta Carbonara", ingredients: ["Pasta", "Eggs", "Cheese", "Bacon"], time: 20, difficulty: "Medium" },
     { name: "Chicken Curry", ingredients: ["Chicken", "Curry paste", "Coconut milk"], time: 45, difficulty: "Easy" },
     { name: "Chocolate Cake", ingredients: ["Flour", "Sugar", "Cocoa", "Eggs"], time: 60, difficulty: "Hard" },
     { name: "Caesar Salad", ingredients: ["Lettuce", "Croutons", "Parmesan", "Dressing"], time: 15, difficulty: "Easy" },
     { name: "Beef Burger", ingredients: ["Beef patty", "Bun", "Lettuce", "Tomato"], time: 25, difficulty: "Easy" }
-];
+]; 
+
+
+
+
+function fetchRecipes():Promise<recipes[]>{ 
+          return Promise.resolve(recipes);
+}
+
+
+fetchRecipes() 
+ .then(res=>{ 
+       console.log(res);
+    })
