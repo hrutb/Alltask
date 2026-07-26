@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+
 
 
 interface Websites  { 
@@ -464,3 +464,125 @@ fetchRecipes()
  .then(res=>{ 
        console.log(res);
     })
+
+
+
+//-------------Superheros----------- 
+
+
+
+
+
+
+interface superheros{ 
+                name:String,
+                alias:String,
+                powers:string[],
+                publisher:String ,
+                debut:number  
+             }
+
+
+
+type superhero ={ 
+                name:String,
+                alias:String,
+                powers:string[],
+                publisher:String ,
+                debut:number 
+          }
+
+
+
+
+
+const superheroes = [
+    { name: "Superman", alias: "Clark Kent", powers: ["Flight", "Super strength"], publisher: "DC", debut: 1938 },
+    { name: "Batman", alias: "Bruce Wayne", powers: ["Intelligence", "Martial arts"], publisher: "DC", debut: 1939 },
+    { name: "Spider-Man", alias: "Peter Parker", powers: ["Wall-crawling", "Spider-sense"], publisher: "Marvel", debut: 1962 },
+    { name: "Wonder Woman", alias: "Diana Prince", powers: ["Super strength", "Lasso of truth"], publisher: "DC", debut: 1941 },
+    { name: "Iron Man", alias: "Tony Stark", powers: ["Genius intellect", "Powered armor"], publisher: "Marvel", debut: 1963 }
+]; 
+
+
+
+
+
+
+function fetchHero():Promise<superheros[]>{
+     return Promise.resolve(superheroes);
+}
+
+fetchHero().then(ele=>console.log(superheroes))
+
+
+
+
+interface mobilePhones{ 
+           brand:string ,
+           model:string,
+           price:number,
+           os:string, 
+           releaseYear:number
+}
+
+type  mobilephone ={ 
+             brand:string ,
+           model:string,
+           price:number,
+           os:string, 
+           releaseYear:number
+}
+
+
+const mobilePhones = [
+    { brand: "iPhone", model: "13 Pro", price: 999, os: "iOS", releaseYear: 2021 },
+    { brand: "Samsung", model: "Galaxy S21", price: 799, os: "Android", releaseYear: 2021 },
+    { brand: "Google", model: "Pixel 6", price: 599, os: "Android", releaseYear: 2021 },
+    { brand: "OnePlus", model: "9 Pro", price: 969, os: "Android", releaseYear: 2021 },
+    { brand: "Xiaomi", model: "Mi 11", price: 749, os: "Android", releaseYear: 2021 }
+];
+
+function fetchmobile():Promise<mobilePhones[]>{
+      return Promise.resolve(mobilePhones);
+} 
+
+fetchmobile()
+     .then(res=>console.log(res));
+
+
+
+
+//-----animals----------- 
+interface  animal{ 
+          name: string,
+          habitat:string, 
+          diet:string ,
+          lifespan:number,
+           weight:number
+}
+
+
+type animals ={ 
+           name: string,
+           habitat:string, 
+           diet:string ,
+           lifespan:number,
+           weight:number
+}
+
+const animals = [
+    { name: "Lion", habitat: "Savanna", diet: "Carnivore", lifespan: 10, weight: 190 },
+    { name: "Elephant", habitat: "Forest", diet: "Herbivore", lifespan: 60, weight: 6000 },
+    { name: "Dolphin", habitat: "Ocean", diet: "Carnivore", lifespan: 20, weight: 200 },
+    { name: "Eagle", habitat: "Mountains", diet: "Carnivore", lifespan: 20, weight: 6 },
+    { name: "Kangaroo", habitat: "Desert", diet: "Herbivore", lifespan: 6, weight: 85 }
+];
+
+
+
+
+
+
+
+
